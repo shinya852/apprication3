@@ -9,4 +9,6 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: {maximum: 20, minimum: 2}, uniqueness: true
   validates :introduction,length: { maximum: 50}
+
+  has_many :favorites, dependent: :destroy#いいね機能
 end
