@@ -2,11 +2,11 @@ class BooksController < ApplicationController
   before_action :authenticate_user!
   before_action :editing_user, only: [:edit]
 
-  def show
+    def show
     @booknew = Book.new
     @book = Book.find(params[:id])
     @user = @book.user
-    #@user = User.find(@book.user_id) ←中止
+    # @user = User.find(@book.user_id)
     @book_comment = BookComment.new
     @book_comments = @book.book_comments
   end

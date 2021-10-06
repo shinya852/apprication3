@@ -17,6 +17,7 @@
           </td>
           <td><%= link_to @book.title, book_path(@book) %></td>
           <td><%= @book.body %></td>
+          <!--いいねのアクションを実装 -->
           <td><%= render 'favorites/favo', book: @book %></td>  <!--いいね機能-->
           <td><%= link_to "コメント数:#{@book.book_comments.count}", book_path(@book.id) %></td>
           <% if @book.user_id == current_user.id %>
