@@ -11,4 +11,11 @@ class User < ApplicationRecord
   validates :introduction,length: { maximum: 50}
 
   has_many :favorites, dependent: :destroy#いいね機能
+
+    def already_favorited?(book)
+      self.favorites.exists?(book_id: book.id)
+    end
+  # コメント機能
+  has_many :book_comments, dependent: :destroy
+
 end

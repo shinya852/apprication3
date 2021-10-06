@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :ensure_correct_user, only: [:update]
+before_action :ensure_correct_user, only: [:update]
   before_action :authenticate_user!
 
   def show
@@ -10,9 +10,8 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    @user = current_user
     @booknew = Book.new
-    @books = Book.all#←追加
+    @user = current_user
   end
 
   def edit
